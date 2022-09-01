@@ -15,8 +15,10 @@ const dateControl = document.querySelector('input[type="date"]');
   let i1 = DateTime.now();
   let i2 = DateTime.fromISO(`${dateControl.value}`);
   let difference = i2
-    .diff(i1, ["months", "days", "hours", "minutes", "seconds"])
+    .diff(i1, [ "days", "hours", "minutes", "seconds"])
     .toObject();
+
+    console.log(difference, 'tutaj')
 
   days.innerHTML = difference.days;
   hours.innerHTML = difference.hours;
