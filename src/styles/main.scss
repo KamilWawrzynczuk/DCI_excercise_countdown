@@ -1,0 +1,172 @@
+// This is where your styles can go :)
+// the existing styles are just a placeholder, feel free to delete :)
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: rgb(245, 245, 245);
+}
+
+main {
+  width: 100%;
+
+  form {
+    label {
+      display: block;
+      font: 1rem "Fira Sans", sans-serif;
+    }
+
+    input,
+    label {
+      margin: 0.4rem 0;
+    }
+  }
+
+  .card_body {
+    width: 80%;
+    margin: 30px auto;
+    height: 80vh;
+    display: flex;
+    flex-flow: row nowrap;
+
+    box-shadow: 1px 3px 5px rgb(180, 180, 180);
+
+    .left {
+      height: 100%;
+      width: 30%;
+      color: #fff;
+      background-image: url("../images/marmur.jpg");
+      font-weight: lighter;
+
+      display: flex;
+      flex-flow: column nowrap;
+
+      align-items: center;
+      justify-content: center;
+
+      .date {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 2rem;
+        align-items: flex-start;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+
+      span {
+        font-weight: bold;
+        font-size: 2rem;
+        margin: 20px;
+      }
+    }
+
+    .right {
+      height: 100%;
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: flex-start;
+      justify-content: center;
+
+      padding: 2rem;
+
+      .social {
+        padding: 1rem;
+
+        i {
+          margin-right: 10px;
+        }
+      }
+
+      .description {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: center;
+        width: 60%;
+        height: 80%;
+
+        h1 {
+          color: #000;
+        }
+
+        p {
+          margin-bottom: 2rem;
+        }
+
+        .btn:link,
+        .btn:visited {
+          text-transform: uppercase;
+          text-decoration: none;
+          padding: 10px 30px;
+          font-weight: bold;
+          display: inline-block;
+          border-radius: 10px;
+          transition: all 0.2s;
+          position: absolute;
+        }
+
+        .btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+          transform: translateY(-1px);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-white {
+          background-color: rgb(240, 239, 239);
+          color: rgb(88, 87, 87);
+        }
+
+        .btn::after {
+          content: "";
+          display: inline-block;
+          height: 100%;
+          width: 100%;
+          border-radius: 100px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transition: all 0.4s;
+        }
+
+        .btn-white::after {
+          background-color: rgb(240, 239, 239);
+        }
+
+        .btn:hover::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0;
+        }
+
+        .btn-animated {
+          animation: moveInBottom 5s ease-out;
+          animation-fill-mode: backwards;
+        }
+
+        @keyframes moveInBottom {
+          0% {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+
+          100% {
+            opacity: 1;
+            transform: translateY(0px);
+          }
+        }
+      }
+    }
+  }
+}
